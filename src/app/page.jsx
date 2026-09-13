@@ -11,7 +11,7 @@ export default function Home() {
       <MarqueeSection />
       <HeroSection />
       <GovernmentServicesGrid />
-      <div className="grid grid-cols-3 gap-4 w-11/12 mx-auto my-8">
+      <div className="mx-auto my-8 grid w-11/12 grid-cols-1 gap-4 lg:grid-cols-3">
         <Carousel />
         <EmbeddedMapCard />
       </div>

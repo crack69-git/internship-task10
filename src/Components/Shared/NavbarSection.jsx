@@ -365,9 +365,9 @@ const Header2 = () => {
           {}
           <div className="flex items-center gap-10">
             {}
-            <a href="#" className="flex items-center gap-2 flex-shrink-0">
+            <a href="#" className="flex shrink-0 items-center gap-2">
               <Image src="/logo.png" alt="Logo" width={32} height={32}></Image>
-              <span className="text-lg font-semibold text-gray-900 dark:text-gray-100">
+              <span className="hidden text-lg font-semibold text-gray-900 dark:text-gray-100 sm:inline">
                 Bangladesh Railway
               </span>
             </a>
@@ -582,7 +582,7 @@ const Header2 = () => {
             <div className="border-t border-gray-200 dark:border-gray-700 mt-4 pt-4">
               <div className="flex items-center justify-between px-3">
                 <div className="flex items-center">
-                  <div className="flex-shrink-0">
+                  <div className="shrink-0">
                     <AvatarIcon className="h-10 w-10" />
                   </div>
                   <div className="ml-3">

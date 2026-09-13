@@ -18,7 +18,7 @@ export default function EmbeddedMapCard({
       </div>
 
       {/* Map Container */}
-      <div className="relative w-full h-[400px] bg-gray-100">
+      <div className="relative h-[280px] w-full bg-gray-100 sm:h-[360px] lg:h-100">
         <iframe
           title="Google Map Location"
           width="100%"

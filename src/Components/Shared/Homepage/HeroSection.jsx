@@ -6,48 +6,54 @@ import { GoDotFill } from "react-icons/go";
 import { IoNewspaperOutline } from "react-icons/io5";
 
 const HeroSection = () => {
-  const notices = (
-    <>
-      <div className="flex items-center justify-between ">
-        <div className="flex flex-col gap-1">
-          <div className="flex items-center gap-2">
-            <GoDotFill color="green" size={16} />
-            <span className="flex items-center gap-2">
-              Visit the Acme Creator Hub to sign up today and start earning
-              credits from your fans and followers.
+  const notices = [
+    {
+      title: "Advance ticket sales for Eid travel",
+      description:
+        "Bangladesh Railway advance tickets are available through the official e-ticketing platform and designated station counters.",
+      date: "13 September 2026",
+      isNew: true,
+    },
+    {
+      title: "Intercity train schedule and fare information",
+      description:
+        "Passengers are requested to check the latest train schedule, route and fare information before starting their journey.",
+      date: "10 September 2026",
+      isNew: false,
+    },
+    {
+      title: "Online railway ticketing service",
+      description:
+        "Use the Bangladesh Railway e-ticketing service to search trains, select seats and complete ticket purchases online.",
+      date: "05 September 2026",
+      isNew: false,
+    },
+  ];
+
+  const noticeItems = notices.map((notice) => (
+    <div key={notice.title} className="flex items-start justify-between gap-3">
+      <div className="flex flex-col gap-1">
+        <div className="flex min-w-0 items-start gap-2">
+          <GoDotFill color="green" size={16} />
+          <span className="flex min-w-0 flex-wrap items-center gap-2 text-sm leading-5">
+            <span className="font-semibold text-gray-800">{notice.title}</span>
+            {notice.isNew && (
               <Chip className="bg-green-100 text-green-800">New</Chip>
-            </span>
-          </div>
-          <div className="text-sm text-gray-700">
-            <span className="font-semibold">Date:</span>{" "}
-            {new Date().toLocaleDateString()}
-          </div>
+            )}
+          </span>
         </div>
-        <Link href="#" className="hover:bg-gray-200 p-1 rounded-full">
-          <FaAngleRight size={20} />
-        </Link>
-      </div>
-      <div className="flex items-center justify-between">
-        <div className="flex flex-col gap-1">
-          <div className="flex items-center gap-2">
-            <GoDotFill color="green" size={16} />
-            <span className="flex items-center gap-2">
-              Visit the Acme Creator Hub to sign up today and start earning
-              credits from your fans and followers.
-              <Chip className="bg-green-100 text-green-800">New</Chip>
-            </span>
-          </div>
-          <div className="text-sm text-gray-700">
-            <span className="font-semibold">Date:</span>{" "}
-            {new Date().toLocaleDateString()}
-          </div>
+        <p className="pl-6 text-sm leading-5 text-gray-600">
+          {notice.description}
+        </p>
+        <div className="text-sm text-gray-700">
+          <span className="font-semibold">Date:</span> {notice.date}
         </div>
-        <Link href="#" className="hover:bg-gray-200 p-1 rounded-full">
-          <FaAngleRight size={20} />
-        </Link>
       </div>
-    </>
-  );
+      <Link href="#" className="hover:bg-gray-200 p-1 rounded-full">
+        <FaAngleRight size={20} />
+      </Link>
+    </div>
+  ));
   return (
     <div className="mx-auto my-8 w-11/12">
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-5">
@@ -57,7 +63,7 @@ const HeroSection = () => {
             <Card.Header className="grow">
               <Card.Title className="text-lg font-bold">Notice</Card.Title>
               <Separator orientation="horizontal" className="my-2" />
-              <div className="flex flex-col gap-5">{notices}</div>
+              <div className="flex flex-col gap-5">{noticeItems}</div>
             </Card.Header>
             <Card.Footer className="mt-auto flex justify-center">
               <Link

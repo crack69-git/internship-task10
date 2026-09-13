@@ -113,7 +113,7 @@ export default function GovernmentServicesGrid() {
             <div className="flex h-full flex-col p-5">
               <div className="flex items-start gap-3.5 mb-4">
                 <div
-                  className={`p-2.5 rounded-full flex-shrink-0 flex items-center justify-center ${card.iconBgColor}`}
+                  className={`flex shrink-0 items-center justify-center rounded-full p-2.5 ${card.iconBgColor}`}
                 >
                   {card.icon}
                 </div>
@@ -125,7 +125,7 @@ export default function GovernmentServicesGrid() {
               <ul className="space-y-2.5">
                 {card.links.map((link, linkIdx) => (
                   <li key={linkIdx} className="flex items-start gap-2">
-                    <span className="w-2 h-2 rounded-full bg-slate-500 mt-2 flex-shrink-0" />
+                    <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-slate-500" />
                     <Link
                       href={link.href || "#"}
                       className="text-gray-700 hover:text-emerald-700 text-sm leading-relaxed transition-colors font-medium cursor-pointer"

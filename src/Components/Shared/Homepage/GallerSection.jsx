@@ -127,14 +127,14 @@ export default function Carousel() {
     }
   };
   return (
-    <section className="col-span-2 w-full flex-col items-center justify-center font-sans overflow-hidden">
+    <section className="col-span-2 w-full overflow-hidden font-sans">
       <div
         className="w-full max-w-5xl mx-auto p-4"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
       >
         <div className="relative flex w-full flex-col rounded-3xl border border-white/10 dark:border-white/10 bg-white dark:bg-neutral-900 p-4 pt-6 md:p-6">
-          <div className="relative w-full h-[280px] md:h-[400px] flex items-center justify-center overflow-hidden pt-12">
+          <div className="relative flex h-[280px] w-full items-center justify-center overflow-hidden pt-8 sm:h-[340px] md:h-[400px] md:pt-12">
             <motion.div
               className="w-full h-full flex items-center justify-center"
               drag="x"
@@ -157,7 +157,7 @@ export default function Carousel() {
             </motion.div>
           </div>
 
-          <div className="flex items-center justify-center gap-6 mt-6">
+          <div className="mt-6 flex items-center justify-center gap-2 sm:gap-6">
             <button
               onClick={() => changeSlide(activeIndex - 1)}
               className="p-2 rounded-full bg-gray-100 dark:bg-white/5 hover:bg-gray-200 dark:hover:bg-white/10 border border-gray-300 dark:border-white/10 text-gray-700 dark:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-pink-500"
@@ -165,7 +165,7 @@ export default function Carousel() {
               <ChevronLeftIcon className="w-6 h-6" />
             </button>
 
-            <div className="flex items-center justify-center gap-2">
+            <div className="flex min-w-0 items-center justify-center gap-1 sm:gap-2">
               {cardData.map((_, index) => (
                 <button
                   key={index}
@@ -209,7 +209,7 @@ function Card({ card, index, activeIndex, totalCards }) {
   };
   return (
     <motion.div
-      className="absolute w-1/2 md:w-1/3 h-[95%]"
+      className="absolute h-[95%] w-[72%] sm:w-1/2 md:w-1/3"
       style={{
         transformStyle: "preserve-3d",
       }}

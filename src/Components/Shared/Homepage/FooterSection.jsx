@@ -23,6 +23,7 @@ const FooterSection = () => {
               alt="UNDP"
               width="400"
               height="100"
+              className="h-auto w-full max-w-[400px]"
             ></Image>
           </div>
         </div>
