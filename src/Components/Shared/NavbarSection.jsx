@@ -1,7 +1,9 @@
 "use client";
 
+import { Button, Dropdown, Label } from "@heroui/react";
 import Image from "next/image";
 import React, { useState, useRef, useEffect } from "react";
+import { HiOutlineMenuAlt2 } from "react-icons/hi";
 const MenuIcon = ({ className }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -215,7 +217,7 @@ const AvatarIcon = ({ className }) => (
 );
 const Header2 = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isFeaturesOpen, setIsFeaturesOpen] = useState(false);
+  const [openFeaturesDropdown, setOpenFeaturesDropdown] = useState(null);
   const [isAvatarOpen, setIsAvatarOpen] = useState(false);
   const [isNotificationsOpen, setIsNotificationsOpen] = useState(false);
   const [openMobileDropdown, setOpenMobileDropdown] = useState(null);
@@ -224,7 +226,7 @@ const Header2 = () => {
   const notificationsDropdownRef = useRef(null);
   const navLinks = [
     {
-      label: "Features",
+      label: "About Us",
       dropdown: [
         {
           href: "#",
@@ -241,16 +243,76 @@ const Header2 = () => {
       ],
     },
     {
-      href: "#",
-      label: "Pricing",
+      label: "Train Services",
+      dropdown: [
+        {
+          href: "#",
+          label: "asd",
+        },
+        {
+          href: "#",
+          label: "Reports",
+        },
+        {
+          href: "#",
+          label: "Integrations",
+        },
+      ],
     },
     {
       href: "#",
-      label: "About",
+      label: "E-Ticket",
     },
     {
-      href: "#",
-      label: "Contact",
+      label: "Notices",
+      dropdown: [
+        {
+          href: "#",
+          label: "asd",
+        },
+        {
+          href: "#",
+          label: "Reports",
+        },
+        {
+          href: "#",
+          label: "Integrations",
+        },
+      ],
+    },
+    {
+      label: "Projects",
+      dropdown: [
+        {
+          href: "#",
+          label: "asd",
+        },
+        {
+          href: "#",
+          label: "Reports",
+        },
+        {
+          href: "#",
+          label: "Integrations",
+        },
+      ],
+    },
+    {
+      label: "Contacts",
+      dropdown: [
+        {
+          href: "#",
+          label: "asd",
+        },
+        {
+          href: "#",
+          label: "Reports",
+        },
+        {
+          href: "#",
+          label: "Integrations",
+        },
+      ],
     },
   ];
   const avatarDropdownLinks = [
@@ -273,7 +335,7 @@ const Header2 = () => {
         featuresDropdownRef.current &&
         !featuresDropdownRef.current.contains(event.target)
       ) {
-        setIsFeaturesOpen(false);
+        setOpenFeaturesDropdown(null);
       }
       if (
         avatarDropdownRef.current &&
@@ -311,25 +373,30 @@ const Header2 = () => {
             </a>
 
             {}
-            <nav className="hidden md:flex items-center gap-6">
+            <nav
+              ref={featuresDropdownRef}
+              className="hidden md:flex items-center gap-6"
+            >
               {navLinks.map((link) =>
                 link.dropdown ? (
-                  <div
-                    key={link.label}
-                    className="relative"
-                    ref={featuresDropdownRef}
-                  >
+                  <div key={link.label} className="relative">
                     <button
-                      onClick={() => setIsFeaturesOpen(!isFeaturesOpen)}
+                      onClick={() =>
+                        setOpenFeaturesDropdown(
+                          openFeaturesDropdown === link.label
+                            ? null
+                            : link.label,
+                        )
+                      }
                       className="flex items-center gap-1 text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors duration-300 focus:outline-none"
                     >
                       {link.label}
                       <ChevronDownIcon
-                        className={`h-4 w-4 transition-transform duration-300 ${isFeaturesOpen ? "rotate-180" : ""}`}
+                        className={`h-4 w-4 transition-transform duration-300 ${openFeaturesDropdown === link.label ? "rotate-180" : ""}`}
                       />
                     </button>
                     <div
-                      className={`absolute top-full mt-2 w-48 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-md shadow-lg transition-opacity duration-300 ${isFeaturesOpen ? "opacity-100 visible" : "opacity-0 invisible"}`}
+                      className={`absolute top-full mt-2 w-48 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-md shadow-lg transition-opacity duration-300 ${openFeaturesDropdown === link.label ? "opacity-100 visible" : "opacity-0 invisible"}`}
                     >
                       {link.dropdown.map((item) => (
                         <a
@@ -352,6 +419,35 @@ const Header2 = () => {
                   </a>
                 ),
               )}
+              <Dropdown>
+                <Button
+                  aria-label="Menu"
+                  variant="ghost"
+                  color="default"
+                  size="small"
+                >
+                  <HiOutlineMenuAlt2 />
+                  Menu
+                </Button>
+                <Dropdown.Popover>
+                  <Dropdown.Menu
+                    onAction={(key) => console.log(`Selected: ${key}`)}
+                  >
+                    <Dropdown.Item id="budget" textValue="Budget">
+                      <Label>Budget</Label>
+                    </Dropdown.Item>
+                    <Dropdown.Item id="Publications" textValue="Publications">
+                      <Label>Publications</Label>
+                    </Dropdown.Item>
+                    <Dropdown.Item id="edit-file" textValue="Edit file">
+                      <Label>Inventory & Policy</Label>
+                    </Dropdown.Item>
+                    <Dropdown.Item id="delete-file" textValue="Delete file">
+                      <Label>Schedule of Rates - 2021</Label>
+                    </Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown.Popover>
+              </Dropdown>
             </nav>
           </div>
 
@@ -399,7 +495,6 @@ const Header2 = () => {
                 </div>
               </div>
             </div>
-
             {}
             <div className="relative hidden sm:block" ref={avatarDropdownRef}>
               <button
@@ -422,7 +517,6 @@ const Header2 = () => {
                 ))}
               </div>
             </div>
-
             {}
             <div className="md:hidden">
               <button
