@@ -366,7 +366,12 @@ const Header2 = () => {
           <div className="flex items-center gap-10">
             {}
             <a href="#" className="flex shrink-0 items-center gap-2">
-              <Image src="/logo.png" alt="Logo" width={32} height={32}></Image>
+              <Image
+                src="/upLogo.png"
+                alt="Logo"
+                width={32}
+                height={32}
+              ></Image>
               <span className="hidden text-lg font-semibold text-gray-900 dark:text-gray-100 sm:inline">
                 Bangladesh Railway
               </span>
@@ -375,7 +380,7 @@ const Header2 = () => {
             {}
             <nav
               ref={featuresDropdownRef}
-              className="hidden md:flex items-center gap-6"
+              className="hidden lg:flex items-center gap-4 xl:gap-6"
             >
               {navLinks.map((link) =>
                 link.dropdown ? (
@@ -421,13 +426,14 @@ const Header2 = () => {
               )}
               <Dropdown>
                 <Button
-                  aria-label="Menu"
+                  aria-label="More"
                   variant="ghost"
                   color="default"
                   size="small"
+                  className="flex items-center gap-1 text-gray-600"
                 >
                   <HiOutlineMenuAlt2 />
-                  Menu
+                  More
                 </Button>
                 <Dropdown.Popover>
                   <Dropdown.Menu
@@ -455,7 +461,7 @@ const Header2 = () => {
           <div className="flex items-center gap-4">
             {}
             <div
-              className="relative hidden sm:block"
+              className="relative hidden lg:block"
               ref={notificationsDropdownRef}
             >
               <button
@@ -496,7 +502,7 @@ const Header2 = () => {
               </div>
             </div>
             {}
-            <div className="relative hidden sm:block" ref={avatarDropdownRef}>
+            <div className="relative hidden lg:block" ref={avatarDropdownRef}>
               <button
                 onClick={() => setIsAvatarOpen(!isAvatarOpen)}
                 className="flex items-center gap-2 focus:outline-none"
@@ -518,7 +524,7 @@ const Header2 = () => {
               </div>
             </div>
             {}
-            <div className="md:hidden">
+            <div className="lg:hidden">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className="inline-flex items-center justify-center p-2 rounded-md text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-500"
@@ -539,7 +545,7 @@ const Header2 = () => {
       {}
       {isMenuOpen && (
         <div
-          className="md:hidden border-t border-gray-200 dark:border-gray-800"
+          className="lg:hidden border-t border-gray-200 dark:border-gray-800"
           id="mobile-menu"
         >
           <div className="px-4 pt-2 pb-3 space-y-1 sm:px-3">
