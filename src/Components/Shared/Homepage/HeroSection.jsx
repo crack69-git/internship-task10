@@ -83,32 +83,32 @@ const HeroSection = () => {
         <div className="lg:col-span-2">
           <div className="grid grid-cols-1 items-stretch gap-4 sm:grid-cols-2">
             <div className="flex">
-              <Card className="flex h-full w-full flex-col">
-                <Card.Header className="grow">
-                  <div className="flex h-48 items-center justify-center rounded-lg bg-gray-100 p-2">
+              <Card className="group flex h-full w-full flex-col overflow-hidden rounded-2xl border border-emerald-100 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-emerald-300 hover:shadow-lg">
+                <Card.Header className="grow p-4">
+                  <div className="relative flex h-44 items-center justify-center overflow-hidden rounded-xl bg-gradient-to-br from-emerald-50 via-gray-50 to-emerald-100 p-3">
                     <Image
                       src="/chairman.png"
                       alt="Chairman"
                       width={180}
                       height={150}
-                      className="h-full w-full shrink-0 rounded-2xl object-contain"
+                      className="h-full w-full shrink-0 rounded-lg object-contain transition-transform duration-300 group-hover:scale-105"
                     ></Image>
                   </div>
-                  <Card.Title className="text-center text-lg font-bold mt-4">
+                  <Card.Title className="mt-4 text-center text-base font-bold leading-6 text-gray-900 sm:text-lg">
                     Seikh Robiul Alam MP
                   </Card.Title>
-                  <Card.Description className="text-center text-sm text-gray-600">
+                  <Card.Description className="mt-1 text-center text-xs leading-5 text-gray-500 sm:text-sm">
                     Honourable MP, Bangladesh Railway
                   </Card.Description>
                 </Card.Header>
-                <Card.Footer className="mt-auto flex justify-center">
+                <Card.Footer className="mt-auto border-t border-gray-100 px-4 py-3">
                   <Link
                     aria-label="Go to Acme Creator Hub (opens in new tab)"
                     href="#"
                     rel="noopener noreferrer"
                     target="_blank"
                   >
-                    <span className="text-sm font-medium text-green-700">
+                    <span className="text-xs font-semibold uppercase tracking-wide text-emerald-700 transition-colors group-hover:text-emerald-900 sm:text-sm">
                       More Info
                     </span>
                     <Link.Icon aria-hidden="true" />
@@ -117,32 +117,32 @@ const HeroSection = () => {
               </Card>
             </div>
             <div className="flex">
-              <Card className="flex h-full w-full flex-col">
-                <Card.Header className="grow">
-                  <div className="flex h-48 items-center justify-center rounded-lg bg-gray-100 p-2">
+              <Card className="group flex h-full w-full flex-col overflow-hidden rounded-2xl border border-emerald-100 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-emerald-300 hover:shadow-lg">
+                <Card.Header className="grow p-4">
+                  <div className="relative flex h-44 items-center justify-center overflow-hidden rounded-xl bg-gradient-to-br from-emerald-50 via-gray-50 to-emerald-100 p-3">
                     <Image
                       src="/proChair.png"
                       alt="proChairman"
                       width={180}
                       height={150}
-                      className="h-full w-full shrink-0 rounded-2xl object-contain"
+                      className="h-full w-full shrink-0 rounded-lg object-contain transition-transform duration-300 group-hover:scale-105"
                     ></Image>
                   </div>
-                  <Card.Title className="text-center text-lg font-bold mt-4">
+                  <Card.Title className="mt-4 text-center text-base font-bold leading-6 text-gray-900 sm:text-lg">
                     Habibur Rashid MP
                   </Card.Title>
-                  <Card.Description className="text-center text-sm text-gray-600">
+                  <Card.Description className="mt-1 text-center text-xs leading-5 text-gray-500 sm:text-sm">
                     Honourable Deputy Minister, Bangladesh Railway
                   </Card.Description>
                 </Card.Header>
-                <Card.Footer className="mt-auto flex justify-center">
+                <Card.Footer className="mt-auto border-t border-gray-100 px-4 py-3">
                   <Link
                     aria-label="Go to Acme Creator Hub (opens in new tab)"
                     href="#"
                     rel="noopener noreferrer"
                     target="_blank"
                   >
-                    <span className="text-sm font-medium text-green-700">
+                    <span className="text-xs font-semibold uppercase tracking-wide text-emerald-700 transition-colors group-hover:text-emerald-900 sm:text-sm">
                       More Info
                     </span>
                     <Link.Icon aria-hidden="true" />
@@ -151,32 +151,32 @@ const HeroSection = () => {
               </Card>
             </div>
             <div className="flex">
-              <Card className="h-full w-full flex flex-col">
-                <Card.Header className="grow">
-                  <div className="flex h-48 items-center justify-center rounded-lg bg-gray-100 p-2">
+              <Card className="group flex h-full w-full flex-col overflow-hidden rounded-2xl border border-emerald-100 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-emerald-300 hover:shadow-lg">
+                <Card.Header className="grow p-4">
+                  <div className="relative flex h-44 items-center justify-center overflow-hidden rounded-xl bg-gradient-to-br from-emerald-50 via-gray-50 to-emerald-100 p-3">
                     <Image
                       src="/sochib.png"
                       alt="Chairman"
                       width={180}
                       height={150}
-                      className="h-full w-full shrink-0 rounded-2xl object-contain"
+                      className="h-full w-full shrink-0 rounded-lg object-contain transition-transform duration-300 group-hover:scale-105"
                     ></Image>
                   </div>
-                  <Card.Title className="text-center text-lg font-bold mt-4">
+                  <Card.Title className="mt-4 text-center text-base font-bold leading-6 text-gray-900 sm:text-lg">
                     MD Fahimul Islam
                   </Card.Title>
-                  <Card.Description className="text-center text-sm text-gray-600">
+                  <Card.Description className="mt-1 text-center text-xs leading-5 text-gray-500 sm:text-sm">
                     Secretary, Ministry of Railways
                   </Card.Description>
                 </Card.Header>
-                <Card.Footer className="mt-auto flex justify-center">
+                <Card.Footer className="mt-auto border-t border-gray-100 px-4 py-3">
                   <Link
                     aria-label="Go to Acme Creator Hub (opens in new tab)"
                     href="#"
                     rel="noopener noreferrer"
                     target="_blank"
                   >
-                    <span className="text-sm font-medium text-green-700">
+                    <span className="text-xs font-semibold uppercase tracking-wide text-emerald-700 transition-colors group-hover:text-emerald-900 sm:text-sm">
                       More Info
                     </span>
                     <Link.Icon aria-hidden="true" />
@@ -185,32 +185,32 @@ const HeroSection = () => {
               </Card>
             </div>
             <div className="flex">
-              <Card className="flex h-full w-full flex-col">
-                <Card.Header className="grow">
-                  <div className="flex h-48 items-center justify-center rounded-lg bg-gray-100 p-2">
+              <Card className="group flex h-full w-full flex-col overflow-hidden rounded-2xl border border-emerald-100 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-emerald-300 hover:shadow-lg">
+                <Card.Header className="grow p-4">
+                  <div className="relative flex h-44 items-center justify-center overflow-hidden rounded-xl bg-gradient-to-br from-emerald-50 via-gray-50 to-emerald-100 p-3">
                     <Image
                       src="/sochib1.png"
                       alt="sochib"
                       width={180}
                       height={150}
-                      className="h-full w-full shrink-0 rounded-2xl object-contain"
+                      className="h-full w-full shrink-0 rounded-lg object-contain transition-transform duration-300 group-hover:scale-105"
                     ></Image>
                   </div>
-                  <Card.Title className="text-center text-lg font-bold mt-4">
+                  <Card.Title className="mt-4 text-center text-base font-bold leading-6 text-gray-900 sm:text-lg">
                     MD Afzal Hossain
                   </Card.Title>
-                  <Card.Description className="text-center text-sm text-gray-600">
+                  <Card.Description className="mt-1 text-center text-xs leading-5 text-gray-500 sm:text-sm">
                     Director General, Bangladesh Railway
                   </Card.Description>
                 </Card.Header>
-                <Card.Footer className="mt-auto flex justify-center">
+                <Card.Footer className="mt-auto border-t border-gray-100 px-4 py-3">
                   <Link
                     aria-label="Go to Acme Creator Hub (opens in new tab)"
                     href="https://heroui.com"
                     rel="noopener noreferrer"
                     target="_blank"
                   >
-                    <span className="text-sm font-medium text-green-700">
+                    <span className="text-xs font-semibold uppercase tracking-wide text-emerald-700 transition-colors group-hover:text-emerald-900 sm:text-sm">
                       More Info
                     </span>
                     <Link.Icon aria-hidden="true" />
